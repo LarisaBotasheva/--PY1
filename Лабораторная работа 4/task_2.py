@@ -15,3 +15,20 @@ main_str = """
 """
 
 print(get_count_char(main_str))
+
+
+def percent_count_car(str_two):
+    str_ = "".join(str_two.lower())
+    dict_two = {}
+    for letter in str_:
+        if letter.isalpha():
+            if letter not in dict_two:
+                dict_two[letter] = 1
+            else:
+                dict_two[letter] += 1
+    total = sum(dict_two.values())
+    for key, val in dict_two.items():
+        dict_two[key] = round(val / total * 100, 2)
+    return(dict_two)
+
+print(percent_count_car(main_str))
